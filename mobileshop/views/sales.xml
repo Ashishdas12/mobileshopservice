@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="sales_list">
+            <field name="name">sales list</field>
+            <field name="model">sale.sale</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sale_seq"/>
+                    <field name="cname"/>
+                    <field name="phone"/>
+                    <field name="pname"/>
+                    <field name="pmodel"/>
+                    <field name="qty"/>
+                    <field name="price"/>
+                    <field name="pdate"/>
+                    <field name="war"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="sale_action_window">
+            <field name="name">sale window</field>
+            <field name="res_model">sale.sale</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    <record model="ir.ui.view" id="sale_form">
+      <field name="name">sale list</field>
+      <field name="model">sale.sale</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+            <div class="oe_title">
+                <h1><field name="sale_seq" /></h1>
+            </div>
+               <group>
+                 <group>
+                    <field name="cname"/>
+                    <field name="add"/>
+                    <field name="phone"/>
+                 </group>
+                 <group>
+                    <field name="pname"/>
+                    <field name="imi"/>
+                    <field name="qty"/>
+                 </group>
+                 <group>
+                   <field name="pmodel"/>
+                   <field name="price"/>
+                   <field name="pdate"/>
+                 </group>
+
+                 <group>
+                   <field name="war"/>
+                   <field name="man"/>
+                 </group>
+
+
+
+               </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+        <menuitem name="Sales" id="mobileshop_menu_2" parent="mobileshop.menu_root" action="sale_action_window"/>
+
+
+
+    </data>
+</odoo>

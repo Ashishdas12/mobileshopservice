@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="sequence_data" model="ir.sequence">
+
+            <field name="name">mobile seq</field>
+            <field name="code">mob.mob.seq</field>
+            <field name="prefix">MOB:</field>
+            <field name="padding">4</field>
+
+        </record>
+
+        <record id="sequence_sale" model="ir.sequence">
+
+            <field name="name">sale seq</field>
+            <field name="code">sale.sale.seq</field>
+            <field name="prefix">SNO:</field>
+            <field name="padding">4</field>
+
+        </record>
+    </data>
+</odoo>

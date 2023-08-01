@@ -1,0 +1,48 @@
+<odoo>
+        <report
+            id="report_card"
+            string="sales Card pdf"
+            model="sale.sale"
+            report_type="qweb-pdf"
+            name="mobileshop.sales_report"
+            file="mobileshop.sales_report" />
+
+        <report
+            id="report_card_xls"
+            string="sales execl Card"
+            model="sale.sale"
+            report_type="xlsx"
+            name="mobileshop.sales_card_xlsx"
+            file="mobileshop.sales_card_xlsx" />
+
+        <record id="sale_excel_report" model="ir.actions.report">
+        <field name="name">sales Excel Report</field>
+        <field name="model">sales.report</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">mobileshop.sale_excel_xlsx</field>
+        <field name="report_file">mobileshop.sale_excel_xlsx</field>
+        <field name="binding_type">report</field>
+    </record>
+
+<!--        mobile shop reports-->
+
+        <report
+            id="mob_report_card"
+            string="mobile Card pdf"
+            model="mob.mob"
+            report_type="qweb-pdf"
+            name="mobileshop.mobiles_report"
+            file="mobileshop.mobiles_report" />
+
+
+        <report
+            id="mobiles_details_card_xls"
+            string="mobiles execl Card"
+            model="mob.mob"
+            report_type="xlsx"
+            name="mobileshop.mobiles_card_xlsx"
+            file="mobileshop.mobiles_card_xlsx" />
+
+
+
+</odoo>

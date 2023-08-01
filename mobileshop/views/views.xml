@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="mobileshop_list">
+      <field name="name">mobileshop list</field>
+      <field name="model">mob.mob</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="mob_seq"/>
+            <field name="name"/>
+            <field name="model"/>
+            <field name="qty"/>
+            <field name="sd"/>
+            <field name="csp"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="mobileshop_action_window">
+      <field name="name">mobileshop window</field>
+      <field name="res_model">mob.mob</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="mobileshop.action_server">
+      <field name="name">mobileshop server</field>
+      <field name="model_id" ref="model_mobileshop_mobileshop"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <record model="ir.ui.view" id="mobile_form">
+      <field name="name">mobile list</field>
+      <field name="model">mob.mob</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+            <div class="oe_title">
+                <h1><field name="mob_seq" /></h1>
+            </div>
+               <group>
+                 <group>
+                    <field name="name"/>
+                    <field name="imei"/>
+                    <field name="model"/>
+                 </group>
+                 <group>
+                    <field name="qty"/>
+                    <field name="sd"/>
+                 </group>
+                 <group>
+                   <field name="cp"/>
+                   <field name="csp"/>
+                 </group>
+
+
+
+               </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="mobileshop" id="mobileshop.menu_root" sequence="0"/>
+    <!-- menu categories -->
+
+    <menuitem name="Mobiles" id="mobileshop.menu_1" parent="mobileshop.menu_root" action="mobileshop_action_window"/>
+<!--    <menuitem name="Menu 2" id="mobileshop.menu_2" parent="mobileshop.menu_root"/>-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="mobileshop.menu_1_list" parent="mobileshop.menu_1"
+              action="mobileshop.action_window"/>
+    <menuitem name="Server to list" id="mobileshop" parent="mobileshop.menu_2"
+              action="mobileshop.action_server"/>
+-->
+  </data>
+</odoo>

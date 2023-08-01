@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+		<template id="sales_report">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+					<h2>sales Card</h2>
+					<h5>Customer Name: <t t-esc="doc.cname"/></h5>
+					<h5>Address: <t t-esc="doc.add"/></h5>
+					<h5>Phone: <t t-esc="doc.phone"/></h5>
+					<h5>Product Name: <t t-esc="doc.pname"/></h5>
+					<h5>Quantity: <t t-esc="doc.qty"/></h5>
+					<h5>IMEI: <t t-esc="doc.imi"/></h5>
+					<h5>Model: <t t-esc="doc.pmodel"/></h5>
+					<h5>Price: <t t-esc="doc.price"/></h5>
+					<h5>Purchase Date: <t t-esc="doc.pdate"/></h5>
+					<h5>Warranty expire Date: <t t-esc="doc.war"/></h5>
+					<h5>Sales Man: <t t-esc="doc.man"/></h5>
+
+					</t>
+				</t>
+			</t>
+		</template>
+
+
+		<template id="mobiles_report">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+					<h2>mobile Card</h2>
+					<h5>ID: <t t-esc="doc.mob_seq"/></h5>
+					<h5>Name: <t t-esc="doc.name"/></h5>
+					<h5>IMEI: <t t-esc="doc.imei"/></h5>
+					<h5>Model: <t t-esc="doc.model"/></h5>
+					<h5>Quantity: <t t-esc="doc.qty"/></h5>
+					<h5>Stock Date: <t t-esc="doc.sd"/></h5>
+					<h5>Customer Price: <t t-esc="doc.csp"/></h5>
+
+
+					</t>
+				</t>
+			</t>
+		</template>
+</odoo>
